@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BDigitalWeb - Automations with AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Lottie Player -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <!-- Chatbase Script -->
+  <script>
+    (function() {
+      if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+        window.chatbase = (...arguments) => {
+          if (!window.chatbase.q) {
+            window.chatbase.q = [];
+          }
+          window.chatbase.q.push(arguments);
+        };
+        window.chatbase = new Proxy(window.chatbase, {
+          get(target, prop) {
+            if (prop === "q") {
+              return target.q;
+            }
+            return (...args) => target(prop, ...args);
+          }
+        });
+      }
+      const onLoad = function () {
+        const script = document.createElement("script");
+        script.src = "https://www.chatbase.co/embed.min.js";
+        script.id = "BHxMnkL7MHogMbfg-3NeH";
+        script.domain = "www.chatbase.co";
+        document.body.appendChild(script);
+      };
+      if (document.readyState === "complete") {
+        onLoad();
+      } else {
+        window.addEventListener("load", onLoad);
+      }
+    })();
+  </script>
+  <style>
+    body { margin: 0; font-family: 'Inter', sans-serif; color: #1f1f1f; }
+    header { background-color: #12172b; color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+    header h1 { margin: 0; font-size: 1.5rem; }
+    nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; }
+    .hero { position: relative; overflow: hidden; }
+    lottie-player {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 100px 20px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+    }
+    .hero h2 { font-size: 2.5rem; margin-bottom: 20px; }
+    .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+    .hero button { background-color: white; color: #5e3ef3; border: none; padding: 15px 30px; font-size: 1rem; border-radius: 8px; cursor: pointer; font-weight: bold; }
+    .section { padding: 80px 20px; max-width: 900px; margin: auto; }
+    .section h3 { font-size: 2rem; text-align: center; margin-bottom: 40px; }
+    .features { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+    .feature { background-color: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); width: 280px; text-align: center; }
+    .testimonial { font-style: italic; background-color: #ffffff; padding: 20px; border-left: 5px solid #5e3ef3; margin: 20px auto; max-width: 700px; }
+    footer { background-color: #12172b; color: white; text-align: center; padding: 40px 20px; }
+    #chatbot { position: fixed; bottom: 20px; right: 20px; background: #5e3ef3; color: white; padding: 15px 20px; border-radius: 50px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+    .section-background {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .section-background lottie-player {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BDigitalWeb</h1>
+    <nav>
+      <a href="#services" data-translate="menu_services">Services</a>
+      <a href="#benefits" data-translate="menu_benefits">Benefits</a>
+      <a href="#contact" data-translate="menu_contact">Contact</a>
+      <select id="lang-switcher" style="margin-left: 20px; padding: 5px; border-radius: 6px;">
+        <option value="en">🇬🇧 EN</option>
+        <option value="pt">🇵🇹 PT</option>
+        <option value="fr">🇫🇷 FR</option>
+        <option value="nl">🇳🇱 NL</option>
+      </select>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_c5y6u7jw.json" background="transparent" speed="1" loop autoplay></lottie-player>
+    <div class="hero-content">
+      <h2 data-translate="hero_title">Boost your business with AI-powered automations</h2>
+      <p data-translate="hero_subtitle">We help small businesses automate tasks using AI, Make.com, ChatGPT, and more.</p>
+      <button onclick="window.location.href='mailto:bdigitalwebinfo@gmail.com?subject=Free Consultation Request'" data-translate="hero_button">Get a Free Consultation</button>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="section-background">
+      <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_v9vnlkzi.json" background="transparent" speed="1" loop autoplay></lottie-player>
+    </div>
+    <h3 data-translate="services_title">Our Services</h3>
+    <div class="features">
+      <div class="feature" data-translate="services_1">Custom automation setups using Make.com and Zapier</div>
+      <div class="feature" data-translate="services_2">AI-powered chatbots for websites and apps</div>
+      <div class="feature" data-translate="services_3">Internal workflow automation for small businesses</div>
+    </div>
+  </section>
+
+  <section id="benefits" class="section">
+    <div class="section-background">
+      <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_9uywunwo.json" background="transparent" speed="1" loop autoplay></lottie-player>
+    </div>
+    <h3 data-translate="benefits_title">Benefits of Working with Us</h3>
+    <div class="features">
+      <div class="feature" data-translate="benefits_1">Save time and reduce manual tasks</div>
+      <div class="feature" data-translate="benefits_2">Affordable solutions tailored to your needs</div>
+      <div class="feature" data-translate="benefits_3">Multilingual support and international experience</div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h3 data-translate="contact_title">Contact Us</h3>
+    <p data-translate="contact_description">Send us an email at <a href="mailto:bdigitalwebinfo@gmail.com">bdigitalwebinfo@gmail.com</a> and we'll get back to you soon!</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 BDigitalWeb. All rights reserved.</p>
+  
+  </footer>
+  
+  <!-- Chatbot Button -->
+  <button id="chatbot" onclick="captureMessage('Chat session started', 'Chatbot');">Open Chat</button>
+  
+  <script>
+    // Simulação de envio de mensagem ao chatbot e envio por email
+    captureMessage('Hello! How can I assist you?', 'Chatbot');
+    captureMessage('I have a question about your services.', 'Client');
+    sendTranscript();
+  </script>
+
+  </style>
+  
+  <script>
+    const translations = {
+      en: {
+        menu_services: "Services",
+        menu_benefits: "Benefits",
+        menu_contact: "Contact",
+        hero_title: "Boost your business with AI-powered automations",
+        hero_subtitle: "We help small businesses automate tasks using AI, Make.com, ChatGPT, and more.",
+        hero_button: "Get a Free Consultation",
+        services_title: "Our Services",
+        services_1: "Custom automation setups using Make.com and Zapier",
+        services_2: "AI-powered chatbots for websites and apps",
+        services_3: "Internal workflow automation for small businesses",
+        benefits_title: "Benefits of Working with Us",
+        benefits_1: "Save time and reduce manual tasks",
+        benefits_2: "Affordable solutions tailored to your needs",
+        benefits_3: "Multilingual support and international experience",
+        contact_title: "Contact Us",
+        contact_description: "Send us an email at <a href='mailto:bdigitalwebinfo@gmail.com'>bdigitalwebinfo@gmail.com</a> and we'll get back to you soon!",
+      },
+      pt: {
+        menu_services: "Serviços",
+        menu_benefits: "Vantagens",
+        menu_contact: "Contato",
+        hero_title: "Impulsione seu negócio com automações inteligentes",
+        hero_subtitle: "Ajudamos pequenas empresas a automatizar tarefas com IA, Make.com, ChatGPT e muito mais.",
+        hero_button: "Solicitar Consulta Gratuita",
+        services_title: "Nossos Serviços",
+        services_1: "Automatizações personalizadas com Make.com e Zapier",
+        services_2: "Chatbots com IA para sites e apps",
+        services_3: "Automação de processos internos para pequenas empresas",
+        benefits_title: "Vantagens de Trabalhar Conosco",
+        benefits_1: "Economize tempo e reduza tarefas manuais",
+        benefits_2: "Soluções acessíveis feitas sob medida",
+        benefits_3: "Atendimento multilíngue e experiência internacional",
+        contact_title: "Fale Conosco",
+        contact_description: "Envie-nos um e-mail para <a href='mailto:bdigitalwebinfo@gmail.com'>bdigitalwebinfo@gmail.com</a> e entraremos em contato em breve!",
+      },
+      fr: {
+        menu_services: "Services",
+        menu_benefits: "Avantages",
+        menu_contact: "Contact",
+        hero_title: "Boostez votre entreprise avec des automatisations IA",
+        hero_subtitle: "Nous aidons les petites entreprises à automatiser grâce à l'IA, Make.com, ChatGPT et plus.",
+        hero_button: "Demander une consultation gratuite",
+        services_title: "Nos Services",
+        services_1: "Automatisations personnalisées avec Make.com et Zapier",
+        services_2: "Chatbots IA pour sites web et applications",
+        services_3: "Automatisation des flux internes pour PME",
+        benefits_title: "Les avantages de travailler avec nous",
+        benefits_1: "Gagnez du temps et réduisez les tâches manuelles",
+        benefits_2: "Des solutions abordables adaptées à vos besoins",
+        benefits_3: "Support multilingue et expérience internationale",
+        contact_title: "Contactez-nous",
+        contact_description: "Envoyez-nous un e-mail à <a href='mailto:bdigitalwebinfo@gmail.com'>bdigitalwebinfo@gmail.com</a> et nous vous répondrons rapidement !",
+      },
+      nl: {
+        menu_services: "Diensten",
+        menu_benefits: "Voordelen",
+        menu_contact: "Contact",
+        hero_title: "Boost je bedrijf met AI-automatiseringen",
+        hero_subtitle: "Wij helpen kleine bedrijven taken te automatiseren met AI, Make.com, ChatGPT en meer.",
+        hero_button: "Gratis consult aanvragen",
+        services_title: "Onze Diensten",
+        services_1: "Maatwerk automatiseringen met Make.com en Zapier",
+        services_2: "AI-chatbots voor websites en apps",
+        services_3: "Interne workflow automatisering voor kleine bedrijven",
+        benefits_title: "Voordelen van samenwerking met ons",
+        benefits_1: "Bespaar tijd en verminder handmatige taken",
+        benefits_2: "Betaalbare oplossingen op maat",
+        benefits_3: "Meertalige ondersteuning en internationale ervaring",
+        contact_title: "Contacteer Ons",
+        contact_description: "Stuur ons een e-mail op <a href='mailto:bdigitalwebinfo@gmail.com'>bdigitalwebinfo@gmail.com</a> en we nemen snel contact met je op!",
+      },
+    };
+
+    const switcher = document.getElementById('lang-switcher');
+    function setLanguage(lang) {
+      localStorage.setItem('selectedLang', lang);
+      document.querySelectorAll('[data-translate]').forEach(el => {
+        const key = el.getAttribute('data-translate');
+        if (translations[lang][key]) {
+          if (el.tagName.toLowerCase() === 'a' || el.tagName.toLowerCase() === 'p' || el.tagName.toLowerCase() === 'div') {
+            el.innerHTML = translations[lang][key];
+          } else {
+            el.textContent = translations[lang][key];
+          }
+        }
+      });
+    }
+    switcher.addEventListener('change', () => {
+      setLanguage(switcher.value);
+    });
+    const savedLang = localStorage.getItem('selectedLang') || 'en';
+    switcher.value = savedLang;
+    setLanguage(savedLang);
+  </script>
+</body>
+</html>
